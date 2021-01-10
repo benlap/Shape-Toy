@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class DoubleClickHandler : MonoBehaviour,IPointerDownHandler
+public class DoubleClickHandler : MonoBehaviour,IPointerDownHandler, IDoubleClickListener
 {
     private float clickCount = 0;
     private float clickTime = 0;
@@ -33,5 +33,11 @@ public class DoubleClickHandler : MonoBehaviour,IPointerDownHandler
         {
             clickCount = 0;
         }
-    }   
+    }
+
+    void IDoubleClickListener.AddListener(UnityAction action)
+    {
+        Debug.Log("added listener");
+        onDoubleClick.AddListener(action);
+    }
 }
