@@ -1,23 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace ShapeToy
 {
     public class ShapeStore : MonoBehaviour
     {
+        [SerializeField]
+        private List<ShapeData> shapeData = null;
 
+        [SerializeField]
+        private Dictionary<Shape, GameObject> shapePrefabs = null;
 
-        // Start is called before the first frame update
-        void Start()
+        public GameObject GetShapePrefab(Shape shape)
         {
-
+            return shapePrefabs[shape];
         }
 
-        // Update is called once per frame
-        void Update()
-        {
+        public List<ShapeData> GetShapeData() 
+        { 
+            return shapeData; 
+        }
 
+        private void Start()
+        {
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            shapePrefabs = new Dictionary<Shape, GameObject>();
+
+            foreach (var data in shapeData)
+                shapePrefabs.Add(data.shape, data.prefab);
         }
     }
 }

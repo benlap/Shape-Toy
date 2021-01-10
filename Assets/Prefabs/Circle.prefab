@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6731352473332887810}
   - component: {fileID: 6731352473332887811}
   m_Layer: 0
-  m_Name: Hexagon
+  m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2a7a30f9014a06641bbc7f11953af121, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6cadbf56f39fbf6428127708e292da8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -275,7 +275,7 @@ SpriteMask:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2a7a30f9014a06641bbc7f11953af121, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6cadbf56f39fbf6428127708e292da8f, type: 3}
   m_MaskAlphaCutoff: 0.2
   m_FrontSortingLayerID: 0
   m_BackSortingLayerID: 0
@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 6731352474517039828}
   - component: {fileID: 6731352474517039829}
   m_Layer: 0
-  m_Name: FillColor
+  m_Name: Pattern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -353,7 +353,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2a7a30f9014a06641bbc7f11953af121, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6cadbf56f39fbf6428127708e292da8f, type: 3}
   m_Color: {r: 1, g: 0.81960785, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 2965773078560693423}
   - component: {fileID: 1396242471016849582}
   m_Layer: 0
-  m_Name: Pattern
+  m_Name: Pattern (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

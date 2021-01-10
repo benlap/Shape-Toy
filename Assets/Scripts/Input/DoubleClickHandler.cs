@@ -37,7 +37,6 @@ public class DoubleClickHandler : MonoBehaviour,IPointerDownHandler, IDoubleClic
 
     void IDoubleClickListener.AddListener(UnityAction action)
     {
-        Debug.Log("added listener");
         onDoubleClick.AddListener(action);
     }
 }

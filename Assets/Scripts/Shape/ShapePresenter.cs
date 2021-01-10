@@ -20,6 +20,28 @@ namespace ShapeToy
         [SerializeField]
         private ShapeController currentShape = null;
 
+        public void ShowShape(Shape shape)
+        {
+            DestroyCurrentShape();
+
+            var newShape = shapeStore.GetShapePrefab(shape);
+
+            var go = Instantiate(newShape, transform);
+            go.transform.localPosition = Vector3.zero;
+
+            go.GetComponentInChildren<IDoubleClickListener>().AddListener(RandomizeShapeColor);
+            currentShape = go.GetComponent<ShapeController>();
+        }
+
+        private void DestroyCurrentShape()
+        {
+            if (currentShape != null)
+            {
+                currentShape.Destroy();
+                currentShape = null;
+            }
+        }
+
         public void MoveShapeToCenter()
         {
             transform.DOMove(centeredTransformTarget.position, animationDuration);
@@ -49,16 +71,6 @@ namespace ShapeToy
             var sequence = DOTween.Sequence();
             sequence.Append(transform.DORotate(new Vector3(0, 0, 90f), 8f, RotateMode.LocalAxisAdd));
             sequence.SetLoops(-1, LoopType.Yoyo);
-        }
-
-        public void ShowShape(Shape shape)
-        {
-            //var newShape = shapeStore.GetShapePrefab()
-
-            //Get shape prefab from store
-            MoveShapeToCenter();
-            //Initialize prefab
-
         }
 
         private void RandomizeShapeColor()

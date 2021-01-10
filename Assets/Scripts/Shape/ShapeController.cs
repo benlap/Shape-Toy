@@ -11,5 +11,10 @@ namespace ShapeToy
         {
             fill.color = newColor;
         }
+
+        public void Destroy()
+        {
+            Destroy(gameObject);    
+        }
     }
 }
