@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6731352473332887809}
   - component: {fileID: 6731352473332887812}
-  - component: {fileID: 6731352473332887808}
   - component: {fileID: 6731352473332887810}
+  - component: {fileID: 8844862395549642211}
+  - component: {fileID: 6731352473332887808}
   - component: {fileID: 6731352473332887811}
   m_Layer: 0
   m_Name: Hexagon
@@ -50,6 +51,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fill: {fileID: 6731352474517039829}
+--- !u!114 &6731352473332887810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6731352473332887871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7117ffaa29b7b4f44ba4dac9d5bc8b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDoubleClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8844862395549642211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6731352473332887871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0123236104fdbc0409a694185411cf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &6731352473332887808
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98,21 +126,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6731352473332887810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6731352473332887871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7117ffaa29b7b4f44ba4dac9d5bc8b65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onDoubleClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!60 &6731352473332887811
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -5,11 +5,15 @@ namespace ShapeToy
 {
     public class ShapePresenter : MonoBehaviour
     {
+        //Services
         [SerializeField]
         private RandomColorStore colorStore = null;
         [SerializeField]
         private ShapeStore shapeStore = null;
-
+        [SerializeField]
+        private SoundEffects sfx = null;
+        
+        //Animation
         [SerializeField]
         private Transform centeredTransformTarget = null;
         [SerializeField]
@@ -17,12 +21,15 @@ namespace ShapeToy
         [SerializeField]
         private float animationDuration = .5f;
 
+        //Cache
         [SerializeField]
         private ShapeController currentShape = null;
 
         public void ShowShape(Shape shape)
         {
             DestroyCurrentShape();
+
+            sfx.PlayChangeShape();
 
             var newShape = shapeStore.GetShapePrefab(shape);
 
@@ -75,6 +82,7 @@ namespace ShapeToy
 
         private void RandomizeShapeColor()
         {
+            sfx.PlayChangeColor();
             var color = colorStore.GetNextColor();
             currentShape.SetColor(color);
         }
