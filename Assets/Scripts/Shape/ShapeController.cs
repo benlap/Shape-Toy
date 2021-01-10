@@ -5,7 +5,7 @@ namespace ShapeToy
     public class ShapeController : MonoBehaviour
     {
         [SerializeField]
-        private SpriteRenderer fill;
+        private SpriteRenderer fill = null;
 
         public void SetColor(Color newColor)
         {

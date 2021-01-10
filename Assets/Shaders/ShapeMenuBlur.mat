@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material
+  m_Name: ShapeMenuBlur
   m_Shader: {fileID: 4800000, guid: 53d8db568f79e4c68b85bc44a056ff25, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4

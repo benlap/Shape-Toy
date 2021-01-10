@@ -11,7 +11,7 @@ public class DoubleClickHandler : MonoBehaviour,IPointerDownHandler, IDoubleClic
     private bool secondClickCameInTime { get { return clickCount > 1 && Time.time - clickTime < clickDelay; } }
 
     [SerializeField]
-    private UnityEvent onDoubleClick;
+    private UnityEvent onDoubleClick = null;
 
     public void OnPointerDown(PointerEventData data)
     {

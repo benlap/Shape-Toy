@@ -6,7 +6,7 @@ namespace ShapeToy
     public class RandomColorStore : MonoBehaviour
     {
         [SerializeField]
-        private List<Color> colors;
+        private List<Color> colors = null;
 
         private int currentColorIndex = 0;
 
