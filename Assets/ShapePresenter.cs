@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using DG.Tweening;
 
 namespace ShapeToy
 {
@@ -6,6 +7,23 @@ namespace ShapeToy
     {
         [SerializeField]
         private RandomColorStore colorStore;
+
+        [SerializeField]
+        private Transform centeredTransformTarget = null;
+        [SerializeField]
+        private Transform asideTransformTarget = null;
+        [SerializeField]
+        private float animationDuration = .5f;
+
+        public void MoveShapeToCenter()
+        {
+            transform.DOMove(centeredTransformTarget.position, animationDuration);
+        }
+
+        public void MoveShapeToAside()
+        {
+            transform.DOMove(asideTransformTarget.position, animationDuration);
+        }
 
         void Start()
         {
