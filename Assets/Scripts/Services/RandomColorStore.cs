@@ -12,14 +12,18 @@ namespace ShapeToy
 
         public Color GetNextColor()
         {
+            currentColorIndex++;
             if (currentColorIndex >= colors.Count)
                 currentColorIndex = 0;
 
             var nextColor = colors[currentColorIndex];
-            currentColorIndex++;
 
             return nextColor;
         }
 
+        public Color GetCurrentColor()
+        {
+            return colors[currentColorIndex];
+        }
     }
 }

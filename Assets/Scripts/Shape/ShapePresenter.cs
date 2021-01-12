@@ -7,9 +7,11 @@ namespace ShapeToy
     {
         //Services
         [SerializeField]
+        private ShapeStore shapeStore = null;
+        [SerializeField]
         private RandomColorStore colorStore = null;
         [SerializeField]
-        private ShapeStore shapeStore = null;
+        private PatternStore patternStore = null;
         [SerializeField]
         private SoundEffects sfx = null;
         
@@ -28,25 +30,9 @@ namespace ShapeToy
         public void ShowShape(Shape shape)
         {
             DestroyCurrentShape();
-
             sfx.PlayChangeShape();
 
-            var newShape = shapeStore.GetShapePrefab(shape);
-
-            var go = Instantiate(newShape, transform);
-            go.transform.localPosition = Vector3.zero;
-
-            go.GetComponentInChildren<IDoubleClickListener>().AddListener(RandomizeShapeColor);
-            currentShape = go.GetComponent<ShapeController>();
-        }
-
-        private void DestroyCurrentShape()
-        {
-            if (currentShape != null)
-            {
-                currentShape.Destroy();
-                currentShape = null;
-            }
+            InstantiateShape(shapeStore.GetShapePrefab(shape));
         }
 
         public void MoveShapeToCenter()
@@ -59,17 +45,28 @@ namespace ShapeToy
             transform.DOMove(asideTransformTarget.position, animationDuration);
         }
 
+        private void InstantiateShape(GameObject shapePrefab)
+        {
+            var go = Instantiate(shapePrefab, transform);
+            go.transform.localPosition = Vector3.zero;
+
+            go.GetComponentInChildren<IDoubleClickListener>().AddListener(RandomizeShapeColor);
+            go.GetComponentInChildren<ISwipeAnyDirectionListener>().AddListener(ApplyNextPattern);
+
+            currentShape = go.GetComponent<ShapeController>();
+
+            ApplyCurrentColorToShape();
+            ApplyCurrentPatternToShape();
+        }
+
         private void Start()
         {
             Initialize();
-
         }
 
         private void Initialize()
         {
-            GetComponentInChildren<IDoubleClickListener>().AddListener(RandomizeShapeColor);
-            currentShape = GetComponentInChildren<ShapeController>();
-
+            ShowShape(Shape.Hexagon);
             StartSwayAnimation();
         }
 
@@ -87,6 +84,29 @@ namespace ShapeToy
             currentShape.SetColor(color);
         }
 
+        private void ApplyCurrentColorToShape()
+        {
+            currentShape.SetColor(colorStore.GetCurrentColor());
+        }
 
+        private void ApplyCurrentPatternToShape()
+        {
+            currentShape.SetPattern(patternStore.GetCurrentPattern());
+        }
+
+        private void ApplyNextPattern()
+        {
+            sfx.PlayChangePattern();
+            currentShape.SetPattern(patternStore.GetNextPattern());
+        }
+
+        private void DestroyCurrentShape()
+        {
+            if (currentShape != null)
+            {
+                currentShape.Destroy();
+                currentShape = null;
+            }
+        }
     }
 }

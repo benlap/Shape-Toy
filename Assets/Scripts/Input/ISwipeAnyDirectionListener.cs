@@ -2,7 +2,7 @@
 
 namespace ShapeToy
 {
-    public interface IDoubleClickListener
+    public interface ISwipeAnyDirectionListener
     {
         void AddListener(UnityAction action);
     }
