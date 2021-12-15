@@ -21,7 +21,7 @@ namespace ShapeToy
 
         public void Destroy()
         {
-            Destroy(pattern); //cleanup object that usese dotween to animate
+            Destroy(pattern); //cleanup the object that uses Dotween to animate
 
             Destroy(gameObject);    
         }
