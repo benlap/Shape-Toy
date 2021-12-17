@@ -1,7 +1,7 @@
 # Shape-Toy
 Shape Toy Unity Demo
 
-*Unity Version: 2018.4.11f1*
+*Unity Version: 2019.4.33f1*
 
 This projects demonstrates a range of Unity features:
 - Animated shapes, UI, background
